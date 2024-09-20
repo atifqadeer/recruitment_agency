@@ -1,0 +1,228 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+$lightBlue : #E2ECF0;
+$darkBlue: #9BB7C5;
+$aqua: #00BFBE;
+body {
+    background: #eee;
+    padding-top: 50px;
+		font-family: sans-serif;
+}
+input{
+  border: none;
+  outline:none;
+}
+input:focus {
+    border: none;
+    outline: none;
+}
+.title{
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.header {
+    max-width: 400px;
+    background: #fff;
+    height: 50px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &__search {
+        margin: 0 10px;
+        position: relative;
+        width: 140px;
+        &:after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            background: #eee;
+            display: block;
+            right: -20px;
+            top: 0;
+        }
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            color: $darkBlue;
+        }
+        .search-field{
+            background: $lightBlue;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 20px;
+            height: 30px;
+            width: 100%;
+            padding-left: 30px;
+            padding-right: 5px;
+            font-size: 1.3em;
+        }
+    }
+    &__notification {
+        width: 100px;
+        background: #fff;
+        height: 20px;
+        margin: 0 10px;
+        display: flex;
+        justify-content: space-around;
+        .bell-icon {
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                color: #eee;
+            }
+            .notification-number {
+              font-size: 0.6em;
+              border-radius: 50%;
+              background-color: $aqua;
+              border: 5px solid $aqua;
+              color: #FFFFFF;
+            }
+            .bell-number {
+                position: absolute;
+                top: -50%;
+                left: 50%;
+            }
+            .notification__list {
+                position: absolute;
+                background: $lightBlue;
+                width: 230px;
+                list-style-type: none;
+                text-align: center;
+                left: -90px;
+                top: 50px;
+                border-radius: 7px;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-bottom-color: #fff;
+                    left: 50%;
+                    top: -20px;
+                    transform: translate(-50%);
+                }
+                &__name {
+                    background: #fff;
+                    color: $darkBlue;
+                    padding: 10px 0;
+                    border-top-left-radius: 7px;
+                    border-top-right-radius: 7px;
+                    border-bottom: 1px solid $darkBlue;
+                    transition: all 1s ease-in-out;
+                }
+                .large-number {
+                    font-size: 0.8em;
+                    border-width: 5px;
+                }
+            }
+            .list__item {
+                border-bottom: 1px solid $darkBlue;
+                transition: all 1s ease-in-out;
+                .user-image {
+                    width: 40px;
+                    height: 40px;
+                    -webkit-border-radius: 50px;
+                    -moz-border-radius: 50px;
+                    border-radius: 50px;
+                }
+                .messages {
+                    padding-left: 10px;
+                    color: #909DA8;
+                    b {
+                        color: #727F8C;
+                    }
+                }
+                &--link {
+                    display: flex;
+                    padding: 10px;
+                    text-decoration: none;
+                    text-align: left;
+                    font-size: 0.7em;
+                    opacity: 0.8;
+                    align-items: center;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &__profile {
+        width: 120px;
+        align-self:stretch;
+        background: #9BB7C5;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        & .profile__photo {
+            background: url(https://cdn.tutsplus.com/net/uploads/legacy/213_chris/ChrisThumbnail.jpg);
+            width: 30px;
+            height: 30px;
+            -webkit-background-size: cover;
+            background-size: cover;
+            border-radius: 50%;
+        }
+        & .fa-arrow-circle-o-down {
+            font-size: 1.6em;
+            color: #fff;
+        }
+    }
+}
+
+.small-icon {
+    font-size: 1.2em;
+    color: #D0DADF;
+}
+
+section {
+    max-width: 400px;
+    margin: auto;
+}
+
+.hide {
+    display: none;
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.checklist{
+  max-width: 400px;
+  margin: 10px auto;
+  li{
+    padding: 5px 10px;
+    list-style-type: disc;
+  }
+}
